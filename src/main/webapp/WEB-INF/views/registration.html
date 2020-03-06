@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:border-radius="http://www.w3.org/1999/xhtml" xmlns:>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng Ký Tài Khoản</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron text-center"  style="background-color: #FBEFEF; margin-bottom: 0px">
+    <img src="https://bongsdiary.com/wp-content/uploads/2018/12/Header-1900-x-700-1410x600.jpg"height="300px">
+    <h1 class="display-3" style="color: #8A0829">Nhật Ký Của Tôi </h1>
+    <p class="lead"></p>
+    <hr class="my-2">
+    <h3>Đăng Ký Tài Khoản </h3>
+    <div class="alert alert-danger" th:if="${errorRegistration != null}"
+         style="text-align: left; color: red; font-weight: bold; font-size: 13px"
+         th:text="${errorRegistration}">
+    </div>
+    <form class="form-group" th:action="@{/registration.html}" method="POST" th:object="${taiKhoan}">
+        <div class="form-group">
+            <br>
+            <input  type="text" name="tenTaiKhoan" width="100px" placeholder="Nhập Tên Đăng Nhập" th:field="*{TenDangNhap}"><br>
+            <br>
+            <input type="password" name="matKhau" width="100px" placeholder="Nhập Mật Khẩu" th:field="*{MatKhau}"><br>
+            <br>
+            <input type="password" name="nhapLaiMatKhau" width="100px" placeholder="Xác Nhận Mật Khẩu"><br>
+            <br>
+            <input type="email" name="email" width="100px" placeholder="Nhập Email" th:field="*{Email}"><br>
+            <br>
+            <input type="text" name="soDienThoai" width="100px" placeholder="Nhập Số Điện Thoại" th:field="*{SDT}"><br>
+            <br>
+        </div>
+        <p class="lead">
+            <button class="btn btn-primary btn-lg" type="submit" style=" background-color: #8A0829;border-color: #8A0829" >Đăng Ký</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-primary btn-lg" type="reset" style=" background-color: #8A0829;border-color: #8A0829" >Làm Mới</button>
+        </p>
+    </form>
+
+</div>
+</body>
+</html>

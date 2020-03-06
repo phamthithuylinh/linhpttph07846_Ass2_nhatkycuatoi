@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:border-radius="http://www.w3.org/1999/xhtml">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xóa Bài Viết</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron text-center"  style="background-color: #FBEFEF; margin-bottom: 0px">
+    <img src="https://bongsdiary.com/wp-content/uploads/2018/12/Header-1900-x-700-1410x600.jpg"height="300px">
+    <h1 class="display-3" style="color: #8A0829">Nhật Ký Của Tôi </h1>
+    <p class="lead"></p>
+    <hr class="my-2">
+<h1>Xóa Bài Viết</h1>
+<h2>Bạn Có Chắc Muốn Xóa Bài Viết Này ?</h2>
+<form class="form-group" style="display: inline" th:action="@{/deletePost}" th:object="${baiViet}" method="post">
+    <input th:type="hidden" name="id" th:field="*{MaBaiViet}">
+            <input type="submit"  class="btn btn-primary" style="background-color: red; border-color: red" value="Xóa Bài Viết">
+</form>
+<form style="display: inline" action="/view.html">
+    <button  type="submit" class="btn btn-primary" style="margin-left: 20px; background-color: deepskyblue" >Trở Về </button>
+</form>
+</div>
+</body>
+</html>
